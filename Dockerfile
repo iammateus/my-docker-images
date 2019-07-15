@@ -18,9 +18,7 @@ RUN apt update \
 	#Sets São Paulo timezone
 	&& ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime \
 	#Reloads timezone
-	&& dpkg-reconfigure --frontend noninteractive tzdata \
-	#Deletes HTML index file
-	&& rm index.nginx-debian.html
+	&& dpkg-reconfigure --frontend noninteractive tzdata 
 
 #Opens /etc/nginx directory
 WORKDIR /etc/nginx/
