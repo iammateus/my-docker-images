@@ -1,0 +1,48 @@
+Ubuntu, Nginx and PHP FPM Installation Steps
+
+Update apt packages
+-> apt update
+
+Use apt package manager to install Nginx
+-> apt install nginx -y
+
+Use apt package manager to install Nano
+-> apt install nano -y
+
+Install Php FPM
+
+	Install software-properties-common to be able to add PPA
+	-> apt install software-properties-common -y
+
+	Add PPA (Personal Package Archives)
+	-> add-apt-repository ppa:ondrej/php -y
+
+	Update apt packages
+	-> apt update
+
+	Install PHP FPM
+	-> apt install php7.2 php7.2-common php7.2-cli php7.2-fpm -y
+
+Enable PHP FPM on Nginx
+
+Copy app file to nginx /etc/nginx/sites-enabled
+
+Create a index.php file in /var/www/html
+
+Restart Nginx
+-> service nginx restart
+
+Restart PHP FPM
+-> service php7.2-fpm restart
+
+HOW TO SET TIMEZONE WITHOUT INTERACTION:
+
+	#!/bin/bash
+	export DEBIAN_FRONTEND=noninteractive
+
+	ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+	apt-get install -y tzdata
+	dpkg-reconfigure --frontend noninteractive tzdata
+
+
+
