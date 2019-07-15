@@ -1,6 +1,6 @@
 # Docker
 
-This repo was created to keep my docker images' source code.
+An Ubuntu 18.04 with Nginx and PHP 7.2 image.
 
 [My Docker Hub profile](https://hub.docker.com/u/mateus1997) 
 
