@@ -7,20 +7,20 @@ RUN apt-get update \
 	&& apt-get install nano -y \
 	#Installs nginx
 	&& apt-get install nginx -y \
-	#Installs software-properties-common to be able to add ppa
-	&& apt-get install software-properties-common -y \
-	#Adds PPA (Personal Package Archives) of PHP FPM
-	&& add-apt-repository ppa:ondrej/php -y \
-	#Updates apt-get packages
-	&& apt-get update \
 	#Installs tzdata
 	&& apt-get install tzdata -y \
 	#Sets São Paulo timezone
 	&& ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime \
 	#Reloads timezone
 	&& dpkg-reconfigure --frontend noninteractive tzdata \
+	#Installs software-properties-common to be able to add ppa
+	&& apt-get install software-properties-common -y \
+	#Adds PPA (Personal Package Archives) of PHP FPM
+	&& add-apt-repository ppa:ondrej/php -y \
+	#Updates apt-get packages
+	&& apt-get update \
 	#Installs PHP 7.2 and most used packages
-	&& apt-get install php7.2 php7.2-common php7.2-cli php7.2-fpm -y \
+	&& apt-get install php7.2 php7.2-common php7.2-cli php7.2-fpm php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-intl php7.2-mysql php7.2-xml php7.2-zip -y \
 	#Installs curl
 	&& apt-get install curl -y \
 	#Download composer installer
