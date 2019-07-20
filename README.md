@@ -1,6 +1,6 @@
 # Docker
 
-An Ubuntu 18.04 with Nginx and PHP 7.2 image.
+An Ubuntu 18.04 with Nginx and PHP 7.2 image (Symfony configs).
 
 [My Docker Hub profile](https://hub.docker.com/u/mateus1997) 
 
