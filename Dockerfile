@@ -20,7 +20,20 @@ RUN apt-get update \
 	#Updates apt-get packages
 	&& apt-get update \
 	#Installs PHP 7.2 and most used packages
-	&& apt-get install php7.2 php7.2-common php7.2-cli php7.2-fpm php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-intl php7.2-mysql php7.2-xml php7.2-zip php7.2-pgsql -y \
+	&& apt-get install php7.2 \
+	                   php7.2-common \
+					   php7.2-cli \
+					   php7.2-fpm \
+					   php7.2-curl \
+					   php7.2-gd \
+					   php7.2-json \
+					   php7.2-mbstring \
+					   php7.2-intl \
+					   php7.2-mysql \
+					   php7.2-xml \
+					   php7.2-zip \
+					   php7.2-pgsql \
+					   php-xdebug -y \
 	#Installs curl
 	&& apt-get install curl -y \
 	#Download composer installer
@@ -33,6 +46,12 @@ WORKDIR /etc/nginx/
 
 #Copies nginx.conf file from host to current image directory 
 COPY nginx.conf nginx.conf
+
+#Opens /etc/php/7.2/mods-available/ directory
+WORKDIR /etc/php/7.2/mods-available/
+
+#Copies xdebug.ini file from host to current image directory (file has proper remote debug configs)
+COPY xdebug.ini xdebug.ini
 
 #Opens /etc/nginx/sites-enabled directory
 WORKDIR /etc/nginx/sites-enabled
