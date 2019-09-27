@@ -1,5 +1,5 @@
 # Docker
 
-This repo was created to keep my docker images' source code.
+An Ubuntu 18.04 with React.
 
-[My Docker Hub profile](https://hub.docker.com/u/mateus1997) 
+[My Docker Hub profile](https://hub.docker.com/u/mateus1997)]
