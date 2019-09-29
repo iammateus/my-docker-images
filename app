@@ -71,7 +71,7 @@ server {
 			return 204;
 		}
 
-		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Origin' '*' always;
 
 		include snippets/fastcgi-php.conf;
 	
