@@ -8,9 +8,6 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-        fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        include fastcgi_params;
 
 		if ($request_method = 'OPTIONS') {
 			add_header 'Access-Control-Allow-Origin' '*';
@@ -28,7 +25,11 @@ server {
 			return 204;
 		}
 
-		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Origin' '*' always;
+		
+        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
 
         # optionally set the value of the environment variables used in the application
         # fastcgi_param APP_ENV prod;
