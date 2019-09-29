@@ -12,6 +12,24 @@ server {
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
 
+		if ($request_method = 'OPTIONS') {
+			add_header 'Access-Control-Allow-Origin' '*';
+			add_header 'Access-Control-Allow-Methods' '*';
+			#
+			# Custom headers and headers various browsers *should* be OK with but aren't
+			#
+			add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+			#
+			# Tell client that this pre-flight info is valid for 20 days
+			#
+			add_header 'Access-Control-Max-Age' 1728000;
+			add_header 'Content-Type' 'text/plain; charset=utf-8';
+			add_header 'Content-Length' 0;
+			return 204;
+		}
+
+		add_header 'Access-Control-Allow-Origin' '*';
+
         # optionally set the value of the environment variables used in the application
         # fastcgi_param APP_ENV prod;
         # fastcgi_param APP_SECRET <app-secret-id>;
