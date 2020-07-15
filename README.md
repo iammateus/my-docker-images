@@ -1,4 +1,4 @@
-# my-docker-images
+# My Docker Images
 
 This repo was created to keep my docker images' source code.
 
