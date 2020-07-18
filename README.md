@@ -1,4 +1,4 @@
-# Docker
+# My Docker Images
 
 An image with Ubuntu 18.04 and React configs for development.
 
