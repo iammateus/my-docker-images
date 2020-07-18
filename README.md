@@ -1,6 +1,6 @@
 # Docker
 
-An Ubuntu 18.04 with React.
+An image with Ubuntu 18.04 and React configs for development.
 
 [My Docker Hub profile](https://hub.docker.com/u/mateus1997)
 
