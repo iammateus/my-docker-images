@@ -1,6 +1,6 @@
 # My Docker Images
 
-An image with Ubuntu 18.04, Nginx and PHP 7.2 image.
+An image with Ubuntu 18.04, Nginx and PHP 7.2 image. (With Xdebug)
 
 [My Docker Hub profile](https://hub.docker.com/u/mateus1997) 
 
