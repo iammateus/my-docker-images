@@ -16,3 +16,10 @@ Here is the list of the different environments and their respective branchs that
 
 ## Docker Hub
 You can find me on Docker Hub [here](https://hub.docker.com/u/mateus1997).
+
+## Docker Hub
+You can find me on Docker Hub [here](https://hub.docker.com/u/mateus1997).
+
+## License
+
+[MIT](https://github.com/iammateus/my-docker-images/blob/master/LICENSE)
